@@ -9,5 +9,6 @@ import { Component, Input, input } from '@angular/core';
 })
 export class CardComponent {
   @Input()
-  people?: any;
+  product?: any;
+  
 }
