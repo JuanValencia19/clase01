@@ -54,6 +54,9 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    this.api.getAllCharacters();
+    return this.api.getAllCharacters().subscribe((characters: any) => {
+      console.log(characters);
+      this.products = characters.results;
+    });
   }
 }

@@ -11,8 +11,6 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
   getAllCharacters(){
-    return this.http.get(URL).subscribe((characters:any) =>{
-      console.log(characters);
-    });
+    return this.http.get(URL);
   }
 }
