@@ -5,8 +5,8 @@
       <p class="card-text">{{product.status}}</p>
       <p class="card-text">{{product.species}}</p>
       <p class="card-text">{{product.gender}}</p>
-      <button type="button" class="btn btn-danger">Delete</button>
-      <button type="button" class="btn btn-info">Edit</button>
+      <button type="button" class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+      <button type="button" class="btn btn-info" (click)="edit(product.image, product.name, product.name, product.species,product.gender)">Edit</button>
   </div>
 </div>
 
