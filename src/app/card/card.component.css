@@ -1,0 +1,8 @@
+.btn-spacing {
+    margin-right: 300px; /* Ajusta el valor según tu preferencia */
+  }
+  .centered-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

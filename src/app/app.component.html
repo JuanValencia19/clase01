@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <h1>Productos</h1>
 
-<div *ngFor="let person of products">
-    <app-card [product]="person">
+    <h1 class="text-center">Personajes de Rick and Morty</h1>
 
-    </app-card>
-</div>
+
+    <div class="d-flex justify-content-center flex-column">
+        <app-card *ngFor="let person of products" [product]="person"></app-card>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -26,4 +26,5 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
