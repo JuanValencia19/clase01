@@ -7,10 +7,16 @@ const URL="https://rickandmortyapi.com/api/character"
   providedIn: 'root'
 })
 export class ServicesService {
+  
 
   constructor(private http: HttpClient) { }
 
   getAllCharacters(){
     return this.http.get(URL);
   }
+  createCharacter(newCharacter: any){
+    return this.http.post(URL, newCharacter);
+  }
 }
+
+  

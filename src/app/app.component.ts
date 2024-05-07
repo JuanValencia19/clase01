@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './card/card.component';
 import { NgForOf } from '@angular/common';
 import { ServicesService } from './services/services.service';
+import { FormControl, ReactiveFormsModule,  } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, NgForOf],
+  imports: [RouterOutlet, CardComponent, NgForOf, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -53,10 +54,33 @@ export class AppComponent {
   constructor(private api: ServicesService) {
 
   }
+
+  info: any;
+
+  name= new FormControl('');
+  image= new FormControl('');
+  status= new FormControl('');
+  species= new FormControl('');
+  type= new FormControl('');
+  gender= new FormControl('');
+
   ngOnInit() {
     return this.api.getAllCharacters().subscribe((characters: any) => {
       console.log(characters);
       this.products = characters.results;
+    });
+  }
+
+  OnSummit(){
+    const newCharater = {
+      name: this.name.value,
+      status: this.status.value,
+      species: this.species.value,
+      type: this.type.value,
+      gender: this.gender.value
+    };
+    this.api.createCharacter(newCharater).subscribe((res) =>{
+      console.log(res);
     });
   }
 }
