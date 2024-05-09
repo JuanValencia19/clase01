@@ -10,17 +10,25 @@
 
 <body>
 
-    <h1 class="text-center">Personajes de Rick and Morty</h1>
-    <label for="name">Name:</label>
-    <input class="border-green" type="text" id="name" [formControl]="name">
+    <h1 class="text-center">Productos Platzi</h1>
+    <label for="name">Titulo:</label>
+    <input class="border-green" type="text" id="title" [formControl]="title">
 
+    <label for="image">Precio:</label>
+    <input class="border-green" type="text" id="price" [formControl]="price">
+
+    <label for="status">Descripcion:</label>
+    <input class="border-green" type="text" id="description" [formControl]="description">
+
+    <label for="image">Categoria:</label>
+    <input class="border-green" type="text" id="CategoryId" [formControl]="CategoryId">
+    
     <label for="image">Image:</label>
-    <input class="border-green" type="text" id="image" [formControl]="image">
+    <input class="border-green" type="text" id="images" [formControl]="images">
 
-    <label for="status">Status:</label>
-    <input class="border-green" type="text" id="status" [formControl]="status">
-
-
+    <button (click)="OnSummit()">
+        Enviar Producto
+    </button>
     <div class="d-flex justify-content-center flex-column">
         <app-card *ngFor="let person of products" [product]="person"></app-card>
     </div>

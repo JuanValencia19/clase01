@@ -13,7 +13,7 @@ import { FormControl, ReactiveFormsModule,  } from '@angular/forms';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'clase01';
+  
 
   products = [
     {
@@ -57,28 +57,28 @@ export class AppComponent {
 
   info: any;
 
-  name= new FormControl('');
-  image= new FormControl('');
-  status= new FormControl('');
-  species= new FormControl('');
-  type= new FormControl('');
-  gender= new FormControl('');
+  title= new FormControl('');
+  price= new FormControl('');
+  description= new FormControl('');
+  CategoryId= new FormControl('');
+  images= new FormControl('');
 
   ngOnInit() {
-    return this.api.getAllCharacters().subscribe((characters: any) => {
-      console.log(characters);
-      this.products = characters.results;
+    return this.api.getAllCharacters().subscribe((products: any) => {
+      console.log(products);
+      this.products = products;
     });
   }
 
   OnSummit(){
     const newCharater = {
-      name: this.name.value,
-      status: this.status.value,
-      species: this.species.value,
-      type: this.type.value,
-      gender: this.gender.value
+      title: this.title.value,
+      price: this.price.value,
+      description: this.description.value,
+      categoryId: this.CategoryId.value,
+      images: [this.images.value]
     };
+
     this.api.createCharacter(newCharater).subscribe((res) =>{
       console.log(res);
     });
