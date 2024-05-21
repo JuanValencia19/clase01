@@ -4,8 +4,16 @@
       <h1 class="card-text">{{product.title}}</h1>
       <p class="card-text">{{product.price}}</p>
       <p class="card-text">{{product.description}}</p>
-      <button type="button" class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+      <button type="button" class="btn btn-danger" (click)="onDeleteClick()">Delete</button>
+      <button type="button" class="btn btn-info" (click)="toggleEdit()">Editar</button>
+      <div *ngIf="editing">
+        <form (submit)="onSubmit()">
+          <input type="text" [(ngModel)]="editedProduct.title" name="title" placeholder="Title">
+          <input type="text" [(ngModel)]="editedProduct.price" name="price" placeholder="Price">
+          <input type="text" [(ngModel)]="editedProduct.description" name="description" placeholder="Description">
+          <input type="text" [(ngModel)]="editedProduct.images" name="image" placeholder="Image">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
   </div>
 </div>
-
-

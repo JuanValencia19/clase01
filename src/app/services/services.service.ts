@@ -23,6 +23,10 @@ export class ServicesService {
     // Asegúrate de incluir el ID en la URL para eliminar el producto específico
     return this.http.delete(`${URL}/${id}`);
   }
+
+  updateCharacter(id: number, updatedCharacter: any) {
+    return this.http.put(`${URL}/${id}`, updatedCharacter);
+  }
 }
 
   
